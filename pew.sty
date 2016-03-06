@@ -1,0 +1,107 @@
+\ProvidesPackage{pew}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+
+% page structure
+\usepackage{geometry}
+\geometry{
+    a4paper,
+    left=10mm,right=10mm,top=10mm,bottom=15mm
+}
+
+\linespread{1.3}
+\everymath{\displaystyle}
+
+% fonts
+\usepackage{times}
+\renewcommand\familydefault{\sfdefault}
+\usepackage{tgheros}
+\usepackage[defaultmono,scale=0.85]{droidmono}
+
+% header/footer
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+
+% graphics
+\usepackage{graphicx}
+\graphicspath{{img/}}
+\usepackage{xcolor}
+\usepackage{tikz}
+
+% math
+\usepackage{amsmath,amssymb,textcomp}
+\usepackage{mathdots}
+\usepackage{enumitem}
+
+% tables
+\usepackage[]{tabulary}
+
+% columns
+\usepackage{multicol}
+\setlength{\columnseprule}{0pt}
+\setlength{\columnsep}{20.0pt}
+
+
+
+% ================================================== %
+% == Custom Header/Footer  == %
+% ================================================== %
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\makeatletter
+\pagestyle{fancy}
+\fancyhead[L]{}
+\fancyhead[R]{}
+\fancyfoot[L]{\footnotesize Linear Algebra KTH SF1624\ -\ \@author}
+\fancyfoot[C]{}
+\fancyfoot[R]{\footnotesize \@date\ [\thepage /\pageref{LastPage}]}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0.5pt}
+\makeatother
+
+
+% ================================================== %
+% == Custom Section  == %
+% ================================================== %
+\usepackage[explicit]{titlesec}
+\newcommand*\sectionlabel{}
+\titleformat{\section}
+  {\gdef\sectionlabel{}
+   \normalfont\sffamily\Large\bfseries\scshape}
+  {\gdef\sectionlabel{\thesection\ }}{0pt}
+  {
+    \noindent
+    \begin{tikzpicture}
+    \node[
+        rectangle,
+        rounded corners=0pt,
+        inner sep=4pt,
+        fill=blue!50!black,
+        text width= 0.95\columnwidth
+    ]{\color{white}\sectionlabel#1};
+    \end{tikzpicture}
+  }
+\titlespacing*{\section}{0pt}{5pt}{2pt}
+
+
+% ================================================== %
+% == Custom Subsection  == %
+% ================================================== %
+\newcommand*\subsectionlabel{}
+\titleformat{\subsection}
+  {\gdef\subsectionlabel{}\bfseries}
+  {\gdef\subsectionlabel{\thesubsection\ }}{0pt}
+  {
+    \noindent
+    \begin{tikzpicture}
+    \node[
+        rectangle,
+        rounded corners=5pt,
+        inner sep=4pt,
+        fill=black!10,
+        text width= 0.95\columnwidth
+    ]{\color{black}\subsectionlabel#1};
+    \end{tikzpicture}
+  }
+\titlespacing*{\subsection}{0pt}{15pt}{2pt}
