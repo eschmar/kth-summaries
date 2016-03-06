@@ -910,7 +910,7 @@ The \textbf{coordinate vector} of x with respect to the basis $\mathcal{B}$ is d
 % -------------------------------------------------- %
 
 \subsubsection{Change of Coordinates Matrix}
-Let $\mathcal{B}$ and $\mathcal{C} = \{w_1, ..., w_n\}$ both be bases for a vector space $\mathbb{V}$. The matrix $P = \begin{bmatrix}[w_1]_{\mathcal{B}} \cdots  [w_n]_{\mathcal{B}}\end{bmatrix}$ is called the \textbf{change of coordinates matrix} from $\mathcal{C}$-coordinates to $\mathcal{B}$-coordinates and satisfies 
+Let $\mathcal{B}$ and $\mathcal{C} = \{w_1, ..., w_n\}$ both be bases for a vector space $\mathbb{V}$. The matrix $P = \begin{bmatrix}[w_1]_{\mathcal{B}} & \cdots & [w_n]_{\mathcal{B}}\end{bmatrix}$ is called the \textbf{change of coordinates matrix} from $\mathcal{C}$-coordinates to $\mathcal{B}$-coordinates and satisfies 
 \begin{equation} \label{4.3-3}
     \begin{split}
         [x]_{\mathcal{B}} = P [x]_{\mathcal{C}}
@@ -982,7 +982,7 @@ Let $\mathbb{V}$ and $\mathbb{W}$ be vector spaces over $\mathbb{R}$. The \textb
 Suppose that $\mathcal{B} = \{\vec{v}_1, ..., \vec{v}_2\}$ is any basis for a vector space $\mathbb{V}$ and that $L : \mathbb{V} \to \mathbb{V}$ is a linear operator. Define the \textbf{matrix of the linear operator} $L$ with respect to the basis $\mathcal{B}$ to be the matrix
 \begin{equation} \label{4.6-1}
     \begin{split}
-        [L]_{\mathcal{B}} = \begin{bmatrix}[L(\vec{v}_1)]_{\mathcal{B}} \cdots [L(\vec{v}_n)]_{\mathcal{B}}\end{bmatrix}
+        [L]_{\mathcal{B}} = \begin{bmatrix}[L(\vec{v}_1)]_{\mathcal{B}} & \cdots & [L(\vec{v}_n)]_{\mathcal{B}}\end{bmatrix}
     \end{split}
 \end{equation}
 
@@ -1007,6 +1007,114 @@ Let $\mathcal{S}$ denote the standard basis for $\mathbb{R}^n$ and let $\mathcal
 
 \subsection{Isomorphism of Vector Spaces [4.7]}
 Not part of this course.
+
+
+
+% ================================================== %
+% == Vector Spaces  == %
+% ================================================== %
+
+\section{Determinants}
+
+% ================================================== %
+
+\subsection{Calculation of $3 \times 3$ matrices [5.1]}
+{\centering \includegraphics[scale=0.3]{determinant} \par}
+
+% ================================================== %
+
+\subsection{Calculation of $n \times n$ matrices [5.1]}
+Let $A$ be a $n \times n$ matrix. Let $A(i,j)$ denote the $(n - 1) \times (n - 1)$ submatrix obtained from $A$ by deleting the $i$-th row and $j$-th column. The \textbf{cofactor of an $n \times n$ matrix of $a_{ij}$} is defined to be
+\begin{equation} \label{5.1-1}
+    \begin{split}
+        C_{ij} = (-1)^{(i + j)} det A(i, j)
+    \end{split}
+\end{equation}
+
+The \textbf{determinant of a $n \times n$ matrix A} is defined by
+\begin{equation} \label{5.1-2}
+    \begin{split}
+        det A = a_{11} C_{11} + a_{12} C_{12} + \cdots + a_{1n} C_{1n}
+    \end{split}
+\end{equation}
+
+The determinant of $A$ may be obtained by \textbf{cofactor expansion} along any row or any column.
+
+% ================================================== %
+
+\subsection{Theorems [5.1]}
+Suppose that $A$ is an $n \times n$ matrix, then
+\begin{enumerate}[label=\bfseries (\arabic*)] \itemsep0pt \parskip0pt 
+    \item If one row (or column) of $A$ contains only zeros: $det A = 0$.
+    \item If $A$ is an upper- or lower-triangular matrix, then the determinant of $A$ is the product of the diagonal entries of $A$: $det A = a_{11} a_{22} \cdots a_{nn}$
+    \item $det A = det A^T$
+\end{enumerate}
+
+% ================================================== %
+
+\subsection{Elementary Row Operations [5.2]}
+Suppose that $A$ is an $n \times n$ matrix, then
+\begin{enumerate}[label=\bfseries (\arabic*)] \itemsep0pt \parskip0pt 
+    \item Multiplying a row of $A$ by a scalar $t$ has the effect $t(det A)$
+    \item Adding one row to another has no effect on the determinant
+    \item Swapping rows negates the determinant: $(-1)(det A)$
+\end{enumerate}
+
+% ================================================== %
+
+\subsection{Invertibility [5.2]}
+If $A$ is an $n \times n$ matrix, then the following are equivalent:
+\begin{enumerate}[label=\bfseries (\arabic*)] \itemsep0pt \parskip0pt 
+    \item $det A \neq 0$
+    \item $rank(A) = n$
+    \item A is invertible
+\end{enumerate}
+
+% ================================================== %
+
+\subsection{Determinant of a Product [5.2]}
+If $A$ and $B$ are $n \times n$ matrices, then
+\begin{equation} \label{5.2-1}
+    \begin{split}
+        det(AB) = (det A)(det B)
+    \end{split}
+\end{equation}
+
+% ================================================== %
+
+\subsection{Matrix Inverse by Cofactors [5.3]}
+
+% -------------------------------------------------- %
+
+\subsubsection{Cofactor Matrix}
+Let $A$ be an $n \times n$ matrix. We define the \textbf{cofactor matrix} of $A$:
+\begin{equation} \label{5.3-1}
+    \begin{split}
+        (cof A)_{ij} = C_{ij}
+    \end{split}
+\end{equation}
+
+% -------------------------------------------------- %
+
+\subsubsection{Carmer's Rule}
+Consider the system of $n$ linear equations in $n$ variables, $A \vec{x} = \vec{b}$. If $det A \neq 0$ so that $A$ is invertible, then the solution may be written in the form:
+\begin{equation} \label{5.3-2}
+    \begin{split}
+        \vec{x} & = A^{-1} \vec{b} = \frac{1}{det A} (cof A)^T \vec{b} \\
+        \begin{bmatrix}x_1 \\ \vdots \\ x_i \\ \vdots \\ x_n \end{bmatrix} & = \frac{1}{det A} \begin{bmatrix}C_{11} & C_{21} & \cdots & C_{n1} \\ \vdots & \vdots & \vdots & \vdots \\ C_{1i} & C_{2i} & \cdots & C_{ni} \\ \vdots & \vdots & \ddots & \vdots \\ C_{1n} & C_{2n} & \cdots  &C_{nn} \end{bmatrix}
+    \end{split}
+\end{equation}
+
+% ================================================== %
+
+\subsection{Area, Volume and the Derminant [5.4]}
+Interesting geometric interpretations of the determinant value:
+
+\begin{enumerate}[label=\bfseries (\arabic*)] \itemsep0pt \parskip0pt 
+    \item The area of the parallelogram induced by $\vec{u}$ and $\vec{v}$ is $Area(\vec{u}, \vec{v}) = |det \begin{bmatrix}u_1 & v_1 \\ u_2 & v_2 \end{bmatrix}|$
+    \item Similar, in 3 dimensions, for the parallelepid: $Volume(\vec{u}, \vec{v}, \vec{w}) = |det \begin{bmatrix}\vec{u} & \vec{v} & \vec{w}\end{bmatrix}|$. This works in general for n-dimensional parallelotopes with n-volume.
+    \item The absolute value of the determinant of the standard matrix $A$ of a linear transformation is the factor by which the area is changed under the linear transformation $L$.
+\end{enumerate}
 
 % ================================================== %
 % ================================================== %
