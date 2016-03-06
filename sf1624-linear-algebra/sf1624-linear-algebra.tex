@@ -910,14 +910,14 @@ The \textbf{coordinate vector} of x with respect to the basis $\mathcal{B}$ is d
 % -------------------------------------------------- %
 
 \subsubsection{Change of Coordinates Matrix}
-Let $\mathcal{B}$ and $\mathcal{C} = \{w_1, ..., w_n\}$ bot be bases for a vector space $\mathbb{V}$. The matrix $\mathcal{P} = \begin{bmatrix}[w_1]_{\mathcal{B}} \cdots  [w_n]_{\mathcal{B}}\end{bmatrix}$ is called the \textbf{change of coordinates matrix} from $\mathcal{C}$-coordinates to $\mathcal{B}$-coordinates and satisfies 
+Let $\mathcal{B}$ and $\mathcal{C} = \{w_1, ..., w_n\}$ both be bases for a vector space $\mathbb{V}$. The matrix $P = \begin{bmatrix}[w_1]_{\mathcal{B}} \cdots  [w_n]_{\mathcal{B}}\end{bmatrix}$ is called the \textbf{change of coordinates matrix} from $\mathcal{C}$-coordinates to $\mathcal{B}$-coordinates and satisfies 
 \begin{equation} \label{4.3-3}
     \begin{split}
-        [x]_{\mathcal{B}} = \mathcal{P} [x]_{\mathcal{C}}
+        [x]_{\mathcal{B}} = P [x]_{\mathcal{C}}
     \end{split}
 \end{equation}
 
-\noindent then $\mathcal{P}$ is invertible and $\mathcal{P}^{-1}$ is the change of coordinates matrix from $\mathcal{B}$-coordinates to $\mathcal{C}$-coordinates.
+\noindent then $P$ is invertible and $P^{-1}$ is the change of coordinates matrix from $\mathcal{B}$-coordinates to $\mathcal{C}$-coordinates.
 
 % ================================================== %
 
@@ -927,10 +927,86 @@ If $\mathbb{V}$ and $\mathbb{W}$ are vector spaces over $\mathbb{R}$, a function
     \item L(x + y) = L(x) = L(y)
     \item L(t x) = t L(x)
 \end{enumerate}
-for all $x, y \in \mathbb{V}$ and $t \in \mathbb{R}$. If $\mathbb{W} = \mathbb{V}$, then $L$ may be called a \textbf{linear operator}. 
+for all $x, y \in \mathbb{V}$ and $t \in \mathbb{R}$. If $\mathbb{W} = \mathbb{V}$, then $L$ may be called a \textbf{linear operator}.
 
+% -------------------------------------------------- %
 
+\subsubsection{Range}
+Let $\mathbb{V}$ and $\mathbb{W}$ be vector spaces over $\mathbb{R}$. The \textbf{range} of a linear mapping $L: \mathbb{V} \to \mathbb{W}$ is defined to be the set
+\begin{equation} \label{4.5-1}
+    \begin{split}
+        Range(L) = \{L(x) \in \mathbb{W} \> | \> x \in \mathbb{V}\}
+    \end{split}
+\end{equation}
 
+\noindent The \textbf{nullspace} of $L$ is the set of all vectors in $\mathbb{V}$ whose image under $L$ is the zero vector $0_{\mathbb{W}}$. We write
+\begin{equation} \label{4.5-2}
+    \begin{split}
+        Null(L) = \{x \in \mathbb{V} \> | \> L(x) = 0_{\mathbb{W}}\}
+    \end{split}
+\end{equation}
+
+Let $\mathbb{V}$ and $\mathbb{W}$ be vector spaces and let $L : \mathbb{V} \to \mathbb{W}$ be a linear mapping. Then
+\begin{enumerate}[label=\bfseries (\arabic*)] \itemsep0pt \parskip0pt 
+    \item $L(0_{\mathbb{V}}) = 0_{\mathbb{W}}$
+    \item $Null(L)$ is a subspace of $\mathbb{V}$
+    \item $Range(L)$ is a subspace of $\mathbb{W}$
+\end{enumerate}
+
+% -------------------------------------------------- %
+
+\subsubsection{Rank}
+Let $\mathbb{V}$ and $\mathbb{W}$ be vector spaces over $\mathbb{R}$. The \textbf{rank of a linear mapping} $L: \mathbb{V} \to \mathbb{W}$ is the dimension of the range of $L$:
+\begin{equation} \label{4.5-3}
+    \begin{split}
+        rank(L) = dim(Range(L))
+    \end{split}
+\end{equation}
+
+% -------------------------------------------------- %
+
+\subsubsection{Nullity}
+Let $\mathbb{V}$ and $\mathbb{W}$ be vector spaces over $\mathbb{R}$. The \textbf{nullity of a linear mapping} $L: \mathbb{V} \to \mathbb{W}$ is the dimension of the nullspace of $L$:
+\begin{equation} \label{4.5-4}
+    \begin{split}
+        nullity(L) = dim(Null(L))
+    \end{split}
+\end{equation}
+
+\noindent Morever, if $dim(\mathbb{V}) = n$, then $rank(L) + nullity(L) = n$.
+
+% ================================================== %
+
+\subsection{Matrix of a Linear Mapping [4.6]}
+
+Suppose that $\mathcal{B} = \{\vec{v}_1, ..., \vec{v}_2\}$ is any basis for a vector space $\mathbb{V}$ and that $L : \mathbb{V} \to \mathbb{V}$ is a linear operator. Define the \textbf{matrix of the linear operator} $L$ with respect to the basis $\mathcal{B}$ to be the matrix
+\begin{equation} \label{4.6-1}
+    \begin{split}
+        [L]_{\mathcal{B}} = \begin{bmatrix}[L(\vec{v}_1)]_{\mathcal{B}} \cdots [L(\vec{v}_n)]_{\mathcal{B}}\end{bmatrix}
+    \end{split}
+\end{equation}
+
+\noindent Then for any $\vec{x} \in \mathbb{R}^n$,
+\begin{equation} \label{4.6-2}
+    \begin{split}
+        [L(\vec{x})]_{\mathcal{B}} = [L]_{\mathcal{B}} [\vec{x}]_{\mathcal{B}}
+    \end{split}
+\end{equation}
+
+% -------------------------------------------------- %
+
+\subsubsection{Change of Coordinates and Linear Mappings}
+Let $\mathcal{S}$ denote the standard basis for $\mathbb{R}^n$ and let $\mathcal{B}$ be any other basis for $\mathbb{R}^n$. Then we have for the change of coordinates matrix $P$:
+\begin{equation} \label{4.6-3}
+    \begin{split}
+        [L]_{\mathbb{B}} = P^{-1} [L]_{\mathcal{S}} P
+    \end{split}
+\end{equation}
+
+% ================================================== %
+
+\subsection{Isomorphism of Vector Spaces [4.7]}
+Not part of this course.
 
 % ================================================== %
 % ================================================== %
