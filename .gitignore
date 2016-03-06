@@ -1,5 +1,6 @@
 *.sublime-project
 *.sublime-workspace
+*.DS_Store
 
 # Created by https://www.gitignore.io/api/ate,latex
 ### LaTeX ###

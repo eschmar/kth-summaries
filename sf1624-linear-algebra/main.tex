@@ -897,7 +897,37 @@ If a vector space $\mathbb{V}$ has a basis of $n$ vectors, then the \textbf{dime
     \end{split}
 \end{equation}
 
-pew
+% -------------------------------------------------- %
+
+\subsubsection{Coordinate Vector}
+The \textbf{coordinate vector} of x with respect to the basis $\mathcal{B}$ is denoted by
+\begin{equation} \label{4.3-2}
+    \begin{split}
+        [x]{_\mathcal{B}} = \begin{bmatrix}x_1 \\ x_2 \\ \vdots \\ x_n \end{bmatrix}
+    \end{split}
+\end{equation}
+
+% -------------------------------------------------- %
+
+\subsubsection{Change of Coordinates Matrix}
+Let $\mathcal{B}$ and $\mathcal{C} = \{w_1, ..., w_n\}$ bot be bases for a vector space $\mathbb{V}$. The matrix $\mathcal{P} = \begin{bmatrix}[w_1]_{\mathcal{B}} \cdots  [w_n]_{\mathcal{B}}\end{bmatrix}$ is called the \textbf{change of coordinates matrix} from $\mathcal{C}$-coordinates to $\mathcal{B}$-coordinates and satisfies 
+\begin{equation} \label{4.3-3}
+    \begin{split}
+        [x]_{\mathcal{B}} = \mathcal{P} [x]_{\mathcal{C}}
+    \end{split}
+\end{equation}
+
+\noindent then $\mathcal{P}$ is invertible and $\mathcal{P}^{-1}$ is the change of coordinates matrix from $\mathcal{B}$-coordinates to $\mathcal{C}$-coordinates.
+
+% ================================================== %
+
+\subsection{Linear Mappings [4.5]}
+If $\mathbb{V}$ and $\mathbb{W}$ are vector spaces over $\mathbb{R}$, a function $L : \mathbb{V} \to \mathbb{W}$ is a linear mapping if it satisfies the linearity properties
+\begin{enumerate}[label=\bfseries L\arabic*] \itemsep0pt \parskip0pt 
+    \item L(x + y) = L(x) = L(y)
+    \item L(t x) = t L(x)
+\end{enumerate}
+for all $x, y \in \mathbb{V}$ and $t \in \mathbb{R}$. If $\mathbb{W} = \mathbb{V}$, then $L$ may be called a \textbf{linear operator}. 
 
 
 % ================================================== %
