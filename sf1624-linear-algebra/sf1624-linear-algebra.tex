@@ -755,11 +755,11 @@ Suppose that $L: \mathbb{R}^n \to \mathbb{R}^n$ is a linear mapping with standar
 
 % ================================================== %
 
-\subsection{Elementary Matrices [3.6]}
-Not part of this course.
+% \subsection{Elementary Matrices [3.6]}
+% Not part of this course.
 
-\subsection{LU-Decomposition [3.7]}
-Not part of this course.
+% \subsection{LU-Decomposition [3.7]}
+% Not part of this course.
 
 
 
@@ -1005,8 +1005,8 @@ Let $\mathcal{S}$ denote the standard basis for $\mathbb{R}^n$ and let $\mathcal
 
 % ================================================== %
 
-\subsection{Isomorphism of Vector Spaces [4.7]}
-Not part of this course.
+% \subsection{Isomorphism of Vector Spaces [4.7]}
+% Not part of this course.
 
 
 
@@ -1116,6 +1116,82 @@ Interesting geometric interpretations of the determinant value:
     \item The absolute value of the determinant of the standard matrix $A$ of a linear transformation is the factor by which the area is changed under the linear transformation $L$.
 \end{enumerate}
 
+
+
+% ================================================== %
+% == Eigenvectors and Diagonalization  == %
+% ================================================== %
+
+\section{Eigenvectors and Diagonalization}
+
+Suppose that $L : \mathbb{R}^n \to \mathbb{R}^n$ is a linear transformation. A non-zero vector $\vec{v} \in \mathbb{R}^n$ such that $L(\vec{v}) = \lambda \vec{v}$ is called an \textbf{eigenvector} of $L$; the scalar $\lambda$ is called an \textbf{eigenvalue} of $L$. The pair $\lambda, \vec{v}$ is called an \textbf{eigenpair}.
+
+This also holds for an $n \times n$ matrix $A$, such that $A \vec{v} = \lambda \vec{v}$, for a non-zero vector $\vec{v} \in \mathbb{R}^n$.
+
+% ================================================== %
+
+\subsection{Finding Eigenvalues and Eigenvectors [6.1]}
+Suppose that $A$ is an $n \times n$ matrix. A real number $\lambda$ is an eigenvalue of $A$ if and only if $\lambda$ satisfies the equation
+\begin{equation} \label{6.1-1}
+    \begin{split}
+        det(A - \lambda I) = 0
+    \end{split}
+\end{equation}
+
+If $\lambda$ is an eigenvalue of $A$, then all non-trivial solutions of the homogeneous system
+\begin{equation} \label{6.1-2}
+    \begin{split}
+        (A - \lambda I) \vec{v} = 0
+    \end{split}
+\end{equation}
+are eigenvectors of $A$ that correspond to $\lambda$.
+
+Suppose that $\lambda_1, ..., \lambda_k$ are distinct ($\lambda_i \neq \lambda_j$) eigenvalues of an $n \times n$ matrix $A$, with corresponding eigenvectors $\vec{v}_1, ..., \vec{v}_k$, respectively. Then $\{\vec{v}_1, ..., \vec{v}_k\}$ is linearly independent.
+
+% ================================================== %
+
+\subsubsection{Eigenspaces}
+Let $\lambda$ be an eigenvalue of an $n \times n$ matrix $A$. Then the set containing the zero vector and all eigenvectors of $A$ corresponding to $\lambda$ is called the \textbf{eigenspace} of $\lambda$.
+
+% ================================================== %
+
+\subsubsection{Characteristic Polynomials}
+Let $A$ be an $n \times n$ matrix $A$. Then $C(\lambda) = det(A - \lambda I)$ is called the \textbf{characteristic polynomial} of $A$.
+
+% -------------------------------------------------- %
+
+\subsubsection{Algebraic and Geometric Multiplicity}
+Let $A$ be an $n \times n$ matrix with eigenvalue $\lambda$. The \textbf{algebraic multiplicity} of $\lambda$ is the number of times $\lambda$ is repeated as a root of the characteristic polynomial. The \textbf{geometric multiplicity} of $\lambda$ of $\lambda$ is the dimension of the eigenspace of $\lambda$.
+\begin{equation} \label{6.1-3}
+    \begin{split}
+        1 & \leq \textrm{geometric multiplicity} \leq \textrm{algebraic multiplicity}
+    \end{split}
+\end{equation}
+
+% ================================================== %
+
+\subsection{Diagonalization [6.2]}
+\begin{equation} \label{6.2-1}
+    \begin{split}
+        P^{-1} A P = D = diag(\lambda_1, ..., \lambda_n)
+    \end{split}
+\end{equation}
+If there exists an invertible matrix $P$ and diagonal matrix $D$ such that $P^{-1} A P = D$, then $A$ is \textbf{diagonalizable or diagonable} and matrix $P$ \textbf{diagonalizes} $A$ to its \textbf{diagonal form} $D$. \\
+
+An $n \times n$ matrix $A$ is diagonalizable if and only if every eigenvalue of matrix A has its geometric multiplicity equal to its algebraic multiplicity. Or in other words, when $A$ has $n$ distinct eigenvalues. \\
+
+If $A$ and $B$ are $n \times n$ matrices such that $P^{-1} A P = B$ for some invertible matrix $P$, then $A$ and $B$ have
+
+\begin{enumerate}[label=\bfseries (\arabic*)] \itemsep0pt \parskip0pt 
+    \item The same determinant
+    \item The same eigenvalues
+    \item The same rank
+    \item The same \textbf{trace}, where the trace of a matrix $A$ is defined by $tr(A) = \sum^{n}_{i=1} a_{ii}$
+\end{enumerate}
+
+and are called \textbf{similar}.
+
+% ================================================== %
 % ================================================== %
 % ================================================== %
 % ================================================== %
