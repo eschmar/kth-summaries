@@ -1192,6 +1192,58 @@ If $A$ and $B$ are $n \times n$ matrices such that $P^{-1} A P = B$ for some inv
 and are called \textbf{similar}.
 
 % ================================================== %
+% == Orthonormal Bases  == %
+% ================================================== %
+
+\section{Orthonormal Bases}
+
+% ================================================== %
+
+\subsection{Orthogonality [7.1]}
+A set of vectors $\{\vec{v}_1, ..., \vec{v}_k\}$ in $\mathbb{R}^n$ is \textbf{orthogonal} if $\vec{v}_i \cdot \vec{v}_j = 0$ whenever $i \neq j$.
+
+If $\{\vec{v}_1, ..., \vec{v}_k\}$ is an orthogonal set of non-zero vectors in $\mathbb{R}^n$, it is linearly independent.
+
+% -------------------------------------------------- %
+
+\subsubsection{Orthonormal}
+A set of vectors $\{\vec{v}_1, ..., \vec{v}_k\}$ in $\mathbb{R}^n$ is \textbf{orthonormal} if it is orthogonal and each vector $\vec{v}_i$ is a unit vector (that is, each vector is normalized).
+
+% -------------------------------------------------- %
+
+\subsubsection{Coordinates with Respect to an ON-Basis}
+If $\mathcal{B} = \{\vec{v}_1, ..., \vec{v}_n\}$ is an orthonormal basis for $\mathbb{R}^n$, then the $i$-th coordinate of a vector $\vec{x} \in \mathbb{R}^n$ with respect to $\mathcal{B}$ is
+\begin{equation} \label{7.1-1}
+    \begin{split}
+        b_i = \vec{x} \cdot \vec{v}_i
+    \end{split}
+\end{equation}
+
+Because the dot product of all other elements will be 0 (orthogonality). It follows that $\vec{x}$ can be written as
+\begin{equation} \label{7.1-2}
+    \begin{split}
+        \vec{x} = (\vec{x} \cdot \vec{v}_1) \vec{v}_1 + (\vec{x} \cdot \vec{v}_2) \vec{v}_2 + \cdots + (\vec{x} \cdot \vec{v}_n) \vec{v}_n 
+    \end{split}
+\end{equation}
+
+% -------------------------------------------------- %
+
+\subsubsection{Change of Coordinates and Orthogonal Matrices}
+An $n \times n$ matrix $P$ such that $P^T P = I$ is called an \textbf{orthogonal matrix}. It follows that $P^{-1} = P^T$ and that $P P^T = I = P^T P$.
+
+The following are equivalent for an $n \times n$ matrix $P$:
+\begin{enumerate}[label=\bfseries (\arabic*)] \itemsep0pt \parskip0pt 
+    \item $P$ is an orthogonal matrix
+    \item The columns of $P$ from an orthonormal set
+    \item The rows of $P$ form an orthonormal set
+\end{enumerate}
+
+% ================================================== %
+
+\subsection{Gram-Schmidt [7.2]}
+//todo
+
+% ================================================== %
 % ================================================== %
 % ================================================== %
 % ================================================== %
