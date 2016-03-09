@@ -1337,12 +1337,77 @@ Suppose that $A \vec{x} = \vec{b}$ is a system of $p$ equations and $q$ variable
 \end{equation}
 
 % ================================================== %
+% == Symmetric Matries and Quadratic Forms  == %
+% ================================================== %
+
+\section{Symmetric Matries and Quadratic Forms}
+
+% ================================================== %
+
+\subsection{Diagonalization of Symmetric Matrices [8.1]}
+
+% -------------------------------------------------- %
+
+\subsubsection{Symmetric Properties}
+\begin{enumerate}[label=\bfseries (\arabic*)] \itemsep0pt \parskip0pt
+    \item An $n \times n$ matrix $A$ is symmetric if and only if $\vec{x} \cdot (A \vec{y}) = (A \vec{x}) \cdot \vec{y}$ for all $\vec{x}, \vec{y} \in \mathbb{R}^n$. In other words: $A^T = A$.
+    \item if $\vec{v}_1$ and $\vec{v}_2$ are eigenvectors of a symmetric matrix A corresponding to distinct eigenvalues $\lambda_1$ and $\lambda_2$, then $\vec{v}_1$ is orthogonal to $\vec{v}_2$.
+    \item If $A$ is a symmetric matrix, then all eigenvalues of $A$ are real.
+\end{enumerate}
+
+% -------------------------------------------------- %
+
+\subsubsection{Orthogonally Diagonalizable}
+Every symmetric matrix be diagonalized, also by an orthogonal matrix. A matrix $A$ is said to be \textbf{orthogonally diagonalizable} if there exists an orthogonal matrix $P$ and a diagonal matrix $D$ such that
+\begin{equation} \label{8.1-1}
+    \begin{split}
+        P^T A P = D
+    \end{split}
+\end{equation}
+
+% ================================================== %
+
+\subsection{Quadratic Forms [8.2]}
+A \textbf{quadratic form} on $\mathbb{R}^n$, with corresponding symmetric matrix $A$, is a function $Q : \mathbb{R}^n \to \mathbb{R}$ defined by
+\begin{equation} \label{8.2-1}
+    \begin{split}
+        Q(\vec{x}) = \sum_{i.j = 1}^{n} a_{ij} x_i x_j = \vec{x}^T A \vec{x}
+    \end{split}
+\end{equation}
+
+% -------------------------------------------------- %
+
+\subsubsection{Diagonal Form}
+A quadratic form $Q(\vec{x})$ is in \textbf{diagonal form} if all the coefficients $a_{jk}$ with $j \neq k$ are equal to $0$. Equivalently, $Q(\vec{x})$ is in diagonal form if its corresponding symmetric matrix is diagonal.
+
+% -------------------------------------------------- %
+
+\subsubsection{Classifications of Quadratic Forms}
+\begin{enumerate}[label=\bfseries \arabic*.] \itemsep0pt \parskip0pt
+    \item \textbf{Positive definite} if $Q(\vec{x}) > 0$ for all $\vec{x} \neq \vec{0}$
+    \item \textbf{Negative definite} if $Q(\vec{x}) < 0$ for all $\vec{x} \neq \vec{0}$
+    \item \textbf{Indefinite} if $Q(\vec{x}) > 0$ for some $\vec{x}$ and $Q(\vec{x}) < 0$ for some $\vec{x}$
+    \item \textbf{Positive semidefinite} if $Q(\vec{x}) \geq 0$ for all $\vec{x}$
+    \item \textbf{Negative semidefinite} if $Q(\vec{x}) \leq 0$ for all $\vec{x}$
+\end{enumerate}
+
+% -------------------------------------------------- %
+
+\subsubsection{Symmetric Matrices}
+Let $Q(\vec{x}) = \vec{x}^T A \vec{x}$, where $A$ is a symmetric matrix. Then
+\begin{enumerate}[label=\bfseries \arabic*.] \itemsep0pt \parskip0pt
+    \item $Q(\vec{x})$ is positive definite if and only if all eigenvalues of $A$ are positive
+    \item $Q(\vec{x})$ is negative definite if and only if all eigenvalues of $A$ are negative
+    \item $Q(\vec{x})$ is indefinite if and only if some of the eigenvalues of $A$ are positive and some are negative
+\end{enumerate}
+
+% ================================================== %
 % ================================================== %
 % ================================================== %
 % ================================================== %
 
-\section{Appendix}
-//todo
+% \section{Appendix}
+% //todo
 
 \end{multicols*}
 \end{document}
