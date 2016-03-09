@@ -1240,8 +1240,101 @@ The following are equivalent for an $n \times n$ matrix $P$:
 
 % ================================================== %
 
-\subsection{Gram-Schmidt [7.2]}
-//todo
+\subsection{Projections and Gram-Schmidt [7.2]}
+
+% -------------------------------------------------- %
+
+\subsubsection{Orthogonal Component}
+Let $\mathbb{S}$ be a subspace of $\mathbb{R}^n$. We shall say that a vector $\vec{x}$ is \textbf{orthogonal} to $\mathbb{S}$ if $\vec{x} \cdot \vec{s} = 0, \forall \vec{s} \in \mathbb{S}$. We call the set of all vectors orthogonal to $\mathbb{S}$ the \textbf{orthogonal complement} of $\mathbb{S}$ and denote it $\mathbb{S}^\bot$. That is,
+\begin{equation} \label{7.2-1}
+    \begin{split}
+        \mathbb{S}^\bot = \{\vec{x} \in \mathbb{R}^n \> | \> \vec{x} \cdot \vec{s} = 0, \forall \vec{s} \in \mathbb{S}\}
+    \end{split}
+\end{equation}
+
+Let $\mathbb{S}$ be a $k$-dimensional subspace of $\mathbb{R}^n$. Then $\mathbb{S}$ is a subspace of $\mathbb{R}^n$ and:
+\begin{enumerate}[label=\bfseries (\arabic*)] \itemsep0pt \parskip0pt 
+    \item $\mathbb{S} \cap \mathbb{S}^\bot = \{\vec{0}\}$
+    \item $dim(\mathbb{S}^\bot) = n - k$
+    \item If $\{\vec{v}_1, ..., \vec{v}_k\}$ is an on-basis for $\mathbb{S}$ and $\{\vec{v}_{k + 1}, ..., \vec{v}_n\}$ is an on-basis for $\mathbb{S}^\bot$, then $\{\vec{v}_1, ..., \vec{v}_k, \vec{v}_{k + 1}, ..., \vec{v}_n\}$ is an on-basis for $\mathbb{R}^n$.
+\end{enumerate}
+
+% -------------------------------------------------- %
+
+\subsubsection{Projection onto a Subspace}
+Let $\mathbb{S}$ be a $k$-dimensional subspace of $\mathbb{R}^n$ and let $\mathcal{B} = \{\vec{v}_1, ..., \vec{v}_k\}$ be an \textit{orthonormal basis} of $\mathbb{S}$. If $\vec{x}$ is any vector in $\mathbb{R}^n$, the \textbf{projection} of $\vec{x}$ onto $\mathbb{S}$ is defined to be
+\begin{equation} \label{7.2-2}
+    \begin{split}
+        proj_\mathbb{S} \vec{x} = (\vec{x} \cdot \vec{v}_1) \vec{v}_1 + (\vec{x} \cdot \vec{v}_2) \vec{v}_2 + \cdots + (\vec{x} \cdot \vec{v}_k) \vec{v}_k
+    \end{split}
+\end{equation}
+
+The \textbf{projection of $\vec{x}$ perpendicular to $\mathbb{S}$} is defined to be
+\begin{equation} \label{7.2-3}
+    \begin{split}
+        perp_\mathbb{S} \vec{x} = \vec{x} - proj_\mathbb{S} \vec{x}
+    \end{split}
+\end{equation}
+
+% -------------------------------------------------- %
+
+\subsubsection{Gram-Schmidt Procedure}
+The Gram-Schmidt procedure converts bases for $\mathbb{S}$ into an orthogonal basis $\{\vec{v}_1, ..., \vec{v}_k\}$ for $\mathbb{S}$. For that, we choose one starting vector of the original basis and then calculate for every other vector:
+
+\begin{equation} \label{7.2-4}
+    \begin{split}
+        \vec{v}_i = perp_{\mathbb{S}_{i - 1}} \vec{w}_i = \vec{w}_i - \frac{\vec{w}_i \cdot \vec{v}_1}{\|\vec{v}_1\|^2} \vec{v}_1 - \cdots - \frac{\vec{w}_i \cdot \vec{v}_{i - 1}}{\|\vec{v}_{i - 1}\|^2} \vec{v}_{i - 1}
+    \end{split}
+\end{equation}
+
+The produced basis $Span \{\vec{v}_1, ..., \vec{v}_k\}$ is an orthogonal basis for the original subspace $\mathbb{S}$.
+
+% ================================================== %
+
+\subsection{Method of Least Squares [7.3]}
+The method of least squares is an approximation method of overdetermined systems. \"Least squares\" means that the overall solution minimizes the sum of the squares of the errors made in the results of every single equation. Squares, because else we might get a small total error by having large positive errors cancelled by large negative errors.
+
+{\centering \includegraphics[scale=0.4]{least_squares} \par}
+
+As an \textbf{example}, we'll look at measurements, where the data fits a curve of the form $y = a + bt + ct^2$. Then we will minimize the sum of the squares of the errors:
+\begin{equation} \label{7.3-1}
+    \begin{split}
+        \sum_{n}^{i = 1} e_i^2 = \sum_{n}^{i = 1} (y_i - (a + bt_i + ct_i^2))^2
+    \end{split}
+\end{equation}
+
+To find the parameters $a, b$ and $c$ that minimize this expression for given values, we will use projections and set up the problem as follows:
+\begin{equation} \label{7.3-2}
+    \begin{split}
+        \|\vec{y}_i - (a\vec{1} + b\vec{t} + c\vec{t}^2)\|^2 = \sum_{n}^{i = 1} (y_i - (a + bt_i + ct_i^2))^2
+    \end{split}
+\end{equation}
+
+Thus, the problem of finding the curve of best fit is reduced to finding $a, b$ and $c$ such that $a\vec{1} + b\vec{t} + c\vec{t}^2$ is the vector in $\mathbb{S}$ that is closest to $\vec{y}$. By the Approximation Theorem, this vector is $proj_{\mathbb{S}} \vec{y}$.
+
+The \textbf{design matrix} $X$ is then:
+\begin{equation} \label{7.3-3}
+    \begin{split}
+        X = \begin{bmatrix}\vec{1} & \vec{t} & \vec{t}^2\end{bmatrix}
+    \end{split}
+\end{equation}
+
+Then the error vector can be written as $\vec{e} = \vec{y} - X\vec{a}$ and the \textbf{normal equations} for the least squares fit are
+\begin{equation} \label{7.3-4}
+    \begin{split}
+        X^T (\vec{y} - X\vec{a}) = \vec{0} \> \textrm{, or } \> \vec{a} = (X^T X)^{-1} X^T \vec{y}
+    \end{split}
+\end{equation}
+
+% -------------------------------------------------- %
+
+\subsubsection{Overdetermined Systems}
+Suppose that $A \vec{x} = \vec{b}$ is a system of $p$ equations and $q$ variables, where $p > q$. Furthermore, if the system is inconsistent, there are to many equations to be satisfied. The next best approach is to find a vector $\vec{x}$ that minimizes the ``error'' $\|A \vec{x} = \vec{b}\|$ and solve the consistent system $A \vec{x} = proj_{Col(A)} \vec{x}$:
+\begin{equation} \label{7.3-5}
+    \begin{split}
+        A^T A \vec{x} = A^T \vec{b}
+    \end{split}
+\end{equation}
 
 % ================================================== %
 % ================================================== %
