@@ -129,11 +129,17 @@ Two trials as \textbf{independent}, if the result of one does not affect, or is 
 \subsection{Theorems in Combinatorics [2.7]}
 Drawing $n$ elements from $N$:
 
+\renewcommand{\arraystretch}{1.5}
 \begin{tabulary}{1.0\textwidth}{r|c|c}
     & with replacement & without replacement \\ \hline
     order & $N^n$ & $N (N-1) \cdots (N-n+1)$ \\ \hline
     no order & $\binom{N+n-1}{n}$ & $\binom{N}{n}$ \\
 \end{tabulary}
+
+\rule{0pt}{0.5em}
+\renewcommand{\arraystretch}{1}
+
+The \textbf{multiplication principle} states: If choice 1 can be performed in $a_1$ ways and choice 2 in $a_2$ ways, then there are $a_1 a_2$ ways to perform both choices. In the case of three choices, the number of ways is $a_1 a_2 a_3$, and so on.
 
 \end{multicols*}
 \end{document}
