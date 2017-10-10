@@ -141,5 +141,40 @@ Drawing $n$ elements from $N$:
 
 The \textbf{multiplication principle} states: If choice 1 can be performed in $a_1$ ways and choice 2 in $a_2$ ways, then there are $a_1 a_2$ ways to perform both choices. In the case of three choices, the number of ways is $a_1 a_2 a_3$, and so on.
 
+\section{One-Dimensional Random Variables}
+\subsection{General Description of Random Variables [3.2]}
+A random variable ($rv$) is a function defined on a sample space.
+
+\subsection{Distribution Function [3.3]}
+For a given real number $x$ we compute the probability $P(X \leq x)$, such that $X$ is smaller than or equal to $x$. This procedure is performed for any $x$. We then obtain a function $F_X(x) = P(X  \leq x)$ defined for all $x$ in the interval $-\infty < x < \infty$.
+
+$F_X(x) = P(X  \leq x)$ is called the (cumulative) distribution function of the $rv$ $X$.
+
+{\centering \includegraphics[scale=0.25]{distribution-function} \par}
+
+\textbf{Theorem 1.} The distribution function $F_X(x)$ of a $rv$ $X$ has the properties:
+\begin{equation} \label{3.2.1}
+    F_X(x) \rightarrow \begin{cases}
+        0 \\
+        1
+    \end{cases} when \quad x \rightarrow \begin{cases}
+        -\infty \\
+        \infty
+    \end{cases}
+\end{equation}
+
+\begin{equation} \label{3.2.2}
+    F_X(x) \quad \text{is a nondecreasing function of} \quad x;
+\end{equation}
+
+\begin{equation} \label{3.2.3}
+    F_X(x) \quad \text{is continuous from the right for any} \quad x
+\end{equation}
+
+\textbf{Theorem 2.} If $a \leq b$, then
+\begin{equation} \label{3.2.3}
+    F_X(b) - F_X(a) = P(a < X \leq b)
+\end{equation}
+
 \end{multicols*}
 \end{document}
