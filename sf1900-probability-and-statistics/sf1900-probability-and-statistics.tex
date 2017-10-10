@@ -217,19 +217,20 @@ is called the \textbf{$\alpha$-quantile} (or fractile) of the $rv$ $X$.
             0 & \text{otherwise}
         \end{cases}
     \end{equation}
-    {\centering \includegraphics[scale=0.3]{continuous-uniform} \par}
     \item \textbf{Exponential}. \begin{equation}
         f_X(x)=\begin{cases}
             \frac{1}{m} e^{-x/m} & \text{if $x \geq 0$}\\
             0 & \text{if $x < 0$}
         \end{cases}
     \end{equation} where $m > 0$. Code name $X \sim Exp(m)$.
-    {\centering \includegraphics[scale=0.3]{continuous-exponential} \par}
     \item \textbf{Normal}. $f_X(x) = \frac{1}{\sigma \sqrt{2 \pi}} e^{-(x-m)^2 / 2 \sigma^2} \quad (-\infty < x < \infty)$, where $m$ and $\sigma$ are given quantities $(\sigma > 0)$. Also called Gaussian. Code name $X \sim N(m, \sigma^2)$
-    {\centering \includegraphics[scale=0.3]{continuous-normal} \par}
     \item \textbf{Weibull?}
     \item \textbf{Gamma?}
 \end{enumerate}
+
+{\centering \includegraphics[scale=0.3]{continuous-uniform} \par}
+{\centering \includegraphics[scale=0.3]{continuous-exponential} \par}
+{\centering \includegraphics[scale=0.3]{continuous-normal} \par}
 
 \end{multicols*}
 \end{document}
