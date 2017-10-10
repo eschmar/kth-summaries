@@ -146,35 +146,38 @@ The \textbf{multiplication principle} states: If choice 1 can be performed in $a
 A random variable ($rv$) is a function defined on a sample space.
 
 \subsection{Distribution Function [3.3]}
-For a given real number $x$ we compute the probability $P(X \leq x)$, such that $X$ is smaller than or equal to $x$. This procedure is performed for any $x$. We then obtain a function $F_X(x) = P(X  \leq x)$ defined for all $x$ in the interval $-\infty < x < \infty$.
-
 $F_X(x) = P(X  \leq x)$ is called the (cumulative) distribution function of the $rv$ $X$.
 
 {\centering \includegraphics[scale=0.25]{distribution-function} \par}
 
 \textbf{Theorem 1.} The distribution function $F_X(x)$ of a $rv$ $X$ has the properties:
-\begin{equation} \label{3.2.1}
-    F_X(x) \rightarrow \begin{cases}
-        0 \\
-        1
-    \end{cases} when \quad x \rightarrow \begin{cases}
-        -\infty \\
-        \infty
-    \end{cases}
-\end{equation}
-
-\begin{equation} \label{3.2.2}
-    F_X(x) \quad \text{is a nondecreasing function of} \quad x;
-\end{equation}
-
-\begin{equation} \label{3.2.3}
-    F_X(x) \quad \text{is continuous from the right for any} \quad x
-\end{equation}
+\begin{enumerate}[label=\bfseries \arabic*.]
+    \item $\lim_{x \to -\infty} F_X(x) = 0$
+    \item $\lim_{x \to \infty} F_X(x) = 1$
+    \item $F_X(x)$ is a nondecreasing function of $x$
+    \item $F_X(x)$ is continuous from the right for any $x$
+\end{enumerate}
 
 \textbf{Theorem 2.} If $a \leq b$, then
-\begin{equation} \label{3.2.3}
+\begin{equation} \label{3.3.1}
     F_X(b) - F_X(a) = P(a < X \leq b)
 \end{equation}
+
+\subsection{Discrete Random Variables [3.4]}
+A random variable is \textbf{discrete} if it can assume a finite or a denumerably infinite number of different values.
+
+The quantities $p_X(k) (k = 0, 1, ...)$ are jointly called the \textbf{probability function} of the $rv$ $X$.
+
+\subsection{Discrete Distributions [3.5]}
+\begin{enumerate}[label=\bfseries (\alph*)]
+    \item \textbf{One-Point}. $p_X(a) = 1$.
+    \item \textbf{Two-Point}. $p_X(a) = p;$ $p_X(b) = q$.
+    \item \textbf{Uniform}. $p_X(k) = \frac{1}{m}, \quad k = 1,2, ..., m$.
+    \item \textbf{Geometric}. $p_X(k) = q^k p, \quad q = 1-p, \quad k = 0,1, ...$.
+    \item \textbf{Binomial}. $p_X(k) = \binom{n}{k} p^k q^{n-k}, \quad k = 0,1, ..., n$.
+    \item \textbf{Hypergeometric}. $p_X(k) = \binom{a}{k} \binom{b}{n-k} / \binom{a + b}{n}, \\ 0 \leq k \leq a, 0 \leq n - k  \leq b$
+    \item \textbf{Poisson}. $p_X(a) = e^{-m} m^k / k!, \quad k = 0, 1, ...$.
+\end{enumerate}
 
 \end{multicols*}
 \end{document}
