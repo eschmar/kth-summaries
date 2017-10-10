@@ -4,6 +4,7 @@
 \date{2017-09-16}
 
 \usepackage{pew}
+\setcounter{section}{1}
 
 \begin{document}
 \begin{multicols*}{2}
@@ -231,6 +232,21 @@ is called the \textbf{$\alpha$-quantile} (or fractile) of the $rv$ $X$.
 {\centering \includegraphics[scale=0.3]{continuous-uniform} \par}
 {\centering \includegraphics[scale=0.3]{continuous-exponential} \par}
 {\centering \includegraphics[scale=0.3]{continuous-normal} \par}
+
+\section{Multidimensional Random Variables}
+\subsection{Independent Random Variables [4.5]}
+The $rv$'s $X$ and $Y$ are called \textbf{independent} if, for all $j$ and $k$ or $x$ and $y$, we have
+\begin{equation}
+    \begin{split}
+        p_{X,Y}(j,k) & = p_X(j) p_Y(k) \quad (\text{discrete rv's}) \\
+        f_{X,Y}(x,y) & = f_X(x) f_Y(y) \quad (\text{continuous rv's})
+    \end{split}
+\end{equation}
+
+The following definition is equivalent: The $rv$'s $X$ and $Y$ are called independent if, for all $x$ and $y$, we have
+\begin{equation}
+    F_{X,Y}(x,y) = F_X(x) F_Y(y)
+\end{equation}
 
 \end{multicols*}
 \end{document}
