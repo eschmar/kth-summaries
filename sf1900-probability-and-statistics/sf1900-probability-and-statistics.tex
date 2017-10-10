@@ -179,5 +179,57 @@ The quantities $p_X(k) (k = 0, 1, ...)$ are jointly called the \textbf{probabili
     \item \textbf{Poisson}. $p_X(a) = e^{-m} m^k / k!, \quad k = 0, 1, ...$.
 \end{enumerate}
 
+\subsection{Density function [3.6]}
+If a function $f_X(x)$ exists, such that
+\begin{equation} \label{3.6.1}
+    F_X(b) - \int_{-\infty}^{x} f_X(t) dt
+\end{equation} is valid, we say that $X$ is a \textbf{continuous} $rv$. The function $f_X(x)$ is called the \textbf{density function} of $X$.
+
+The density function shows how the total probability mass of $1$ is distributed over the infinitely many $x$-values:
+\begin{equation} \label{3.6.2}
+    \int_{-\infty}^{\infty} f_X(t) dt = 1
+\end{equation}
+
+
+\textbf{Theorem 3.} At any point of continuity $x$ of $f_X(x)$:
+\begin{equation} \label{3.6.3}
+    F'_X(x) = f_X(x)
+\end{equation}
+
+Hence
+\begin{equation}
+    \begin{split}
+        F_X(b) - F_X(a) & = \int_a^b f_X(t) dt \\
+        P(a < X \leq b) & = \int_a^b f_X(t) dt \quad (a < b)
+    \end{split}
+\end{equation}
+
+The solution $x = x_\alpha$ of the equation $F_X(x) = 1 - \alpha$
+is called the \textbf{$\alpha$-quantile} (or fractile) of the $rv$ $X$.
+
+{\centering \includegraphics[scale=0.25]{quantile} \par}
+
+\subsection{Continuous Distributions [3.7]}
+\begin{enumerate}[label=\bfseries (\alph*)]
+    \item \textbf{Uniform}. \begin{equation}
+        f_X(x)=\begin{cases}
+            1/(b-a) & \text{if $a < x < b$}\\
+            0 & \text{otherwise}
+        \end{cases}
+    \end{equation}
+    {\centering \includegraphics[scale=0.3]{continuous-uniform} \par}
+    \item \textbf{Exponential}. \begin{equation}
+        f_X(x)=\begin{cases}
+            \frac{1}{m} e^{-x/m} & \text{if $x \geq 0$}\\
+            0 & \text{if $x < 0$}
+        \end{cases}
+    \end{equation} where $m > 0$. Code name $X \sim Exp(m)$.
+    {\centering \includegraphics[scale=0.3]{continuous-exponential} \par}
+    \item \textbf{Normal (or Gaussian)}. $f_X(x) = \frac{1}{\sigma \sqrt{2 \pi}} e^{-(x-m)^2 / 2 \sigma^2} \quad (-\infty < x < \infty)$, wher $m$ and $\sigma$ are given quantities $(\sigma > 0)$. Code name $X \sim N(m, \sigma^2)$
+    {\centering \includegraphics[scale=0.3]{continuous-normal} \par}
+    \item \textbf{Weibull?}
+    \item \textbf{Gamma?}
+\end{enumerate}
+
 \end{multicols*}
 \end{document}
