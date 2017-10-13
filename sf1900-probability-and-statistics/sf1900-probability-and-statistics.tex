@@ -248,5 +248,65 @@ The following definition is equivalent: The $rv$'s $X$ and $Y$ are called indepe
     F_{X,Y}(x,y) = F_X(x) F_Y(y)
 \end{equation}
 
+\section{Functions of Random Variables [5.2]}
+\subsection{A Single Function of a Random Variable}
+Consider the $rv$ $Y = g(X)$ and find the distribution of $Y$. \textbf{Method:}
+
+\begin{enumerate}[label=\bfseries (\arabic*)] \itemsep0pt \parskip0pt
+    \item Determine the distribution function $F_Y(y)$ of $Y$: $F_Y(y) = P(g(x) \leq y) = ... = P(X \leq g'(x)) = F_X(g'(x))$.
+    \item Obtain density funciton by differentiating the distribution function with respect to $y$.
+\end{enumerate}
+
+\subsection{Sums of Random Variables [5.3]}
+The "addition" of two random variables $X$ and $Y$ is often called \textbf{convolution of the distributions of $X$ and $Y$}. The distribution function of $Z = X + Y$ is obtained by integrating the joint density funtion $f_{X,Y}(x,y)$ over the region $x + y \leq z$:
+\begin{equation}
+    F_Z(z) = \iint_{x + y \leq z} f_{X,Y}(x,y) dx dy
+\end{equation}
+or for independent $X$ and $Y$:
+\begin{equation}
+    F_Z(z) = \iint_{x + y \leq z} f_{X}(x) f_{Y}(y) dx dy
+\end{equation}
+which can be rewritten to the \textbf{convolution formula for independent continuous rv's}:
+\begin{equation}
+    F_Z(z) = \int_{-\infty}^{\infty} f_{X}(x) f_{Y}(z - x) dx
+\end{equation}
+
+\subsection{Largest Value and Smallest Value [5.4]}
+\textbf{Larger of Two Values}
+Set $Z = max(X, Y)$. $Z \leq z$ if and only if both $X \leq z$ and $Y \leq z$, hence
+\begin{equation}
+    F_Z(z) = P(Z \leq z) = P(X \leq z \wedge Y \leq z) = F_X(z) F_Y(z)
+\end{equation}
+
+\textbf{Smaller of Two Values}
+Set $Z = min(X, Y)$. Since $Z > z$ if and only if both $X > z$ and $Y > z$,
+\begin{equation}
+    \begin{split}
+        F_Z(z) & = P(Z \leq z) = 1 - P(Z > z) \\
+        & = 1 - P(X > z \wedge Y > z) \\
+        & = 1 - P(X > z) P(Y > z)
+    \end{split}
+\end{equation}
+With $P(X > z) = 1 - P(X \leq z) = 1 - F_X(z)$, we find that:
+\begin{equation}
+    F_Z(z) = 1 - [1 - F_X(z)][1 - F_Y(z)]
+\end{equation}
+
+\subsection{Ratio of Random Variables [5.5]}
+Determine the distribution of the rv $Z = X/Y$:
+\begin{equation}
+    F_Z(z) = P(X/Y \leq z) = P(X \leq Yz), \quad y \geq 0
+\end{equation}
+
+The distribution function is
+\begin{equation}
+    F_Z(z) = \int_0^{\infty} F_X(yz) f_Y(y) dy
+\end{equation}
+
+Whenever differentiation under the integral sign is permissible, we get the density function
+\begin{equation}
+    F_Z(z) = \int_0^{\infty} y f_X(yz) f_Y(y) dy
+\end{equation}
+
 \end{multicols*}
 \end{document}
