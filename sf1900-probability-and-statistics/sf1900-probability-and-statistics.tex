@@ -308,5 +308,117 @@ Whenever differentiation under the integral sign is permissible, we get the dens
     F_Z(z) = \int_0^{\infty} y f_X(yz) f_Y(y) dy
 \end{equation}
 
+\section{Expectations}
+\subsection{Definition and Simple Properties [6.2]}
+The \textbf{expectation} of the rv $X$ is defined by
+
+\begin{equation}
+    E(X) = \mu = \begin{cases}
+        \sum_k k p_X(k) & \text{discrete rv} \\
+        \int_{-\infty}^{\infty} x f_X(x) dx & \text{continuous rv}
+    \end{cases}
+\end{equation}
+
+Instead of expectation we often use the term \textbf{mean}. The symbol $E(X)$ is often replaced by $m$, $m_X$ or some other symbol.
+
+Analogously, the expectation of a function $Y = g(X)$ of a rv $X$:
+\begin{equation}
+    E(Y) = \begin{cases}
+        \sum_k g(k) p_X(k) & \text{discrete rv} \\
+        \int_{-\infty}^{\infty} g(x) f_X(x) dx & \text{continuous rv}
+    \end{cases}
+\end{equation}
+and for $Z = g(X, Y$
+\begin{equation}
+    E(Z) = \begin{cases}
+        \sum_{j,k} g(j,k) p_{X,Y}(j,k) & \text{discrete rv} \\
+        \int_{-\infty}^{\infty} \int_{-\infty}^{\infty} g(x,y) f_{X,Y}(x,y) dx dy & \text{continuous rv}
+    \end{cases}
+\end{equation}
+
+\textbf{Properties:}
+\begin{enumerate}[label=\bfseries (\arabic*)] \itemsep0pt \parskip0pt
+    \item $E$ is a linear operator: $E[g(X) + h(X)] = E[g(X)] + E[h(X)]$
+    \item If $Y$ is a linear function $Y = a X + b$, it follows that $E(A X + b) = a E(X) + b$.
+    \item The mean is a measure of location: If a constant $b$ is added to the rv, then $b$ is added to the mean.
+\end{enumerate}
+
+\subsection{Measures of Location and Dispersion [6.3]}
+In order to give a complete description of a rv we use the distribution function or the probability function/density function. When such detailed knowledge is not required, we may use other measures which describe some property of the distribution. Of particular value are:
+
+\subsubsection{Measures of Location}
+The expectation $E(X)$ is a measure of location that shows where the mass is situated "on the average". Another measure is the \textbf{median}$x_{0.50}$, denoted by $\widetilde{m}$.
+
+\subsubsection{Measures of Dispersion}
+Since two rv's can have the same expectation with different distributions, the measure of location alone is not enough. Measures of dispersion include:
+
+The \textbf{variance} $V(X)$ of the rv $X$ is defined by
+\begin{equation}
+    V(X) = E[(X - m)^2] = E(X^2) - [E(X)^2]
+\end{equation}
+
+Hence the variance is the expectation of the rv $Y = (X - m)^2$, where $m = E(X)$. This is sensible: If the distribution is concentrated around $m$, then $(X - m)^2$ assumes small values with large probability, and the variance is small. In particular, if the whole probability mass is concentrated at one single point, the variance is O. If the sum or the integral does not converge, we say that the variance does not exist.
+
+The \textbf{standard deviation} $D(X)$ of the rv $X$ is the square root of the variance, in order to get the same dimension as the rv itself:
+\begin{equation}
+    D(X) = \sigma = \sqrt{V(X)}
+\end{equation}
+
+The \textbf{coefficient of variation} is the ratio
+\begin{equation}
+    R(X) = \frac{D(X)}{E(X)}
+\end{equation}
+when $X$ assumes non-negative values.
+
+\textbf{Rules of computation}:
+\begin{equation}
+    \begin{split}
+        E(a X + b) & = a E(X) + b \\
+        V(a X + b) & = a^2 V(X) \\
+        D(a X + b) & = |a| D(X)
+    \end{split}
+\end{equation}
+
+{\centering \includegraphics[scale=0.35]{change-move-distribution} \par}
+
+\subsubsection{Standardized rv}
+
+If $X$ is a rv with expectation $m$ and standard deviation $\sigma$, we call $Y = \frac{(X - m)}{\sigma}$ a \textbf{standardized} rv.
+
+\begin{equation}
+    E(Y) = E[(X - m) / \sigma] = \frac{1}{\sigma} E(X) - \frac{m}{\sigma} = 0
+\end{equation}
+\begin{equation}
+    V(Y) = \frac{1}{\sigma^2} V(X) = 1
+\end{equation}
+
+Hence a standardized rv has mean 0 and variance 1.
+
+\subsubsection{Error}
+
+\textbf{Systematic error} is the difference between the mean of the measured value and the true value. \textbf{Random error} is the difference between the measured value and its mean.
+
+It is important to distinguish between \textbf{accuracy} and \textbf{precision}. By high accuracy we mean good agreement between measured value and true value; by high precision we mean small random error.
+
+\subsection{MeasuresofDependence [6.4]}
+The \textbf{covariance} of $X$ and $Y$ is defined by
+\begin{equation}
+    \begin{split}
+        C(X,Y) & = E[(X - m_X)(Y - m_Y)] \\
+        & = E(XY) - E(X) E(Y)
+    \end{split}
+\end{equation}
+
+If $C(X, Y) = 0$, the rv's $X$ and $Y$ are said to be \textbf{uncorrelated}. This is the case when $E(XY) = E(X)E(Y)$ and means.
+
+This means that if $X$ and $Y$ are independent, then they are also uncorrelated.
+
+The \textbf{coefficient of correlation} of $X$ and $Y$ is defined by
+\begin{equation}
+    \rho(X, Y) = \frac{C(X,Y)}{D(X)D(Y)}
+\end{equation}
+
+By dividing the covariance by $D(X)D(Y)$, we obtain a dimensionless quantity, that always lies between $-1$ and $1$.
+
 \end{multicols*}
 \end{document}
