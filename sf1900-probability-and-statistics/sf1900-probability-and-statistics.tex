@@ -400,7 +400,7 @@ Hence a standardized rv has mean 0 and variance 1.
 
 It is important to distinguish between \textbf{accuracy} and \textbf{precision}. By high accuracy we mean good agreement between measured value and true value; by high precision we mean small random error.
 
-\subsection{MeasuresofDependence [6.4]}
+\subsection{Measures of Dependence [6.4]}
 The \textbf{covariance} of $X$ and $Y$ is defined by
 \begin{equation}
     \begin{split}
@@ -419,6 +419,58 @@ The \textbf{coefficient of correlation} of $X$ and $Y$ is defined by
 \end{equation}
 
 By dividing the covariance by $D(X)D(Y)$, we obtain a dimensionless quantity, that always lies between $-1$ and $1$.
+
+\section{More About Expectations}
+\subsection{Product, Sum and Linear Combination [7.2]}
+
+\textbf{Theorem 1, Product:} If $X$ and $Y$ are independent rv's, then
+\begin{equation}
+    E(X Y) = E(X) E(Y)
+\end{equation}
+
+\textbf{Theorem 2, Sum:} For all rv's $X$ and $Y$
+\begin{equation}
+    \begin{split}
+        E(X + Y) & = E(X) + E(Y) \\
+        V(X + Y) & = V(X) + V(Y) + C(X, Y)
+    \end{split}
+\end{equation}
+
+If $X$ and $Y$ are independent (covariance is zero), we also have
+\begin{equation}
+    \begin{split}
+        V(X + Y) & = V(X) + V(Y) \\
+        D(X + Y) & = \sqrt{D^2(X) + D^2(Y)}
+    \end{split}
+\end{equation}
+
+\textbf{Theorem 2', Difference:} For all rv's $X$ and $Y$
+\begin{equation}
+    \begin{split}
+        E(X - Y) & = E(X) - E(Y) \\
+        V(X - Y) & = V(X) + V(Y) - C(X, Y)
+    \end{split}
+\end{equation}
+
+If $X$ and $Y$ are independent (covariance is zero), we also have
+\begin{equation}
+    \begin{split}
+        V(X - Y) & = V(X) + V(Y)
+    \end{split}
+\end{equation}
+
+\textbf{Theorem 3, Linear Combination:} For all rv's $X_1$, $X_2$, ..., $X_n$
+\begin{equation}
+    \begin{split}
+        E(\sum_{i=1}^n c_i X_i) & = \sum_{i=1}^n c_i E(X_i) \\
+        V(\sum_{i=1}^n c_i X_i) & = \sum_{i=1}^n c_i^2 V(X_i) + 2 \sum_{i<j} c_i c_j C(X_i, X_j)
+    \end{split}
+\end{equation}
+
+In particular, if $X_1, X_2, ..., X_n$ are independent, we have
+\begin{equation}
+    V(\sum_{i=1}^n c_i X_i) = \sum_{i=1}^n c_i^2 V(X_i)
+\end{equation}
 
 \end{multicols*}
 \end{document}
