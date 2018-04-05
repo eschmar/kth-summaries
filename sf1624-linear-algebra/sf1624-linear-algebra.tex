@@ -455,7 +455,7 @@ For any matrices $A$ and $B$ and scalar $s \in \mathbb{R}$, we have
 \subsection{Matrix Multiplication [3.1]}
 \begin{equation} \label{3.1-4}
     \begin{split}
-        A \vec{x} & = \begin{bmatrix}a_{11} & a_{12} \\ a_{21} & a_{22}\end{bmatrix} \begin{bmatrix}x_1 \\ x_2\end{bmatrix} = \begin{bmatrix}a_{11} x_1 & a_{12} x_2 \\ a_{21} x_1 & a_{22} x_2\end{bmatrix}
+        A \vec{x} & = \begin{bmatrix}a_{11} & a_{12} \\ a_{21} & a_{22}\end{bmatrix} \begin{bmatrix}x_1 \\ x_2\end{bmatrix} = \begin{bmatrix}a_{11} x_1 + a_{12} x_2 \\ a_{21} x_1 + a_{22} x_2\end{bmatrix}
     \end{split}
 \end{equation}
 
@@ -523,7 +523,7 @@ If $L: \mathbb{R}^n \to \mathbb{R}^m$ is a linear mapping, then $L$ can be repre
 
 \subsection{Compositions and Linear Combinations
 of Linear Mappings [3.2]}
-If L and M are linear mappings from $\mathbb{R}^n \to \mathbb{R}^m$ and $t \in \mathbb{R}$,then $(L + M)$ and $(t L)$ are linear mappings.
+If L and M are linear mappings from $\mathbb{R}^n \to \mathbb{R}^m$ and $t \in \mathbb{R}$, then $(L + M)$ and $(t L)$ are linear mappings.
 
 Let $L: \mathbb{R}^n \to \mathbb{R}^m$ and $M: \mathbb{R}^m \to \mathbb{R}^p$ be linear mappings. The \textbf{composition} $M \circ L: \mathbb{R}^n \to \mathbb{R}^p$ is defined by 
 \begin{equation} \label{3.2-3}
