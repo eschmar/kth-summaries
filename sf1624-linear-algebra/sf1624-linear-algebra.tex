@@ -562,7 +562,9 @@ $R_{\theta} : \mathbb{R}^2 \to \mathbb{R}^2$ is defined to be the transformation
 
 \begin{equation} \label{3.3-1}
     \begin{split}
-        R_{\theta}(\vec{x}) & = \begin{bmatrix}x_1 \cos{\theta} - x_2 \sin{\theta} \\ x_1 \sin{\theta} + x_2 \cos{\theta}\end{bmatrix}
+        R_{\theta} & = \begin{bmatrix}
+            \cos{\theta} & - \sin{\theta} \\ \sin{\theta} & \cos{\theta}
+        \end{bmatrix}
     \end{split}
 \end{equation}
 
@@ -1299,7 +1301,7 @@ The produced basis $Span \{\vec{v}_1, ..., \vec{v}_k\}$ is an orthogonal basis f
 % ================================================== %
 
 \subsection{Method of Least Squares [7.3]}
-The method of least squares is an approximation method of overdetermined systems. \"Least squares\" means that the overall solution minimizes the sum of the squares of the errors made in the results of every single equation. Squares, because else we might get a small total error by having large positive errors cancelled by large negative errors.
+The method of least squares is an approximation method of overdetermined systems. \textit{Least squares} means that the overall solution minimizes the sum of the squares of the errors made in the results of every single equation. Squares, because else we might get a small total error by having large positive errors cancelled by large negative errors.
 
 {\centering \includegraphics[scale=0.4]{least_squares} \par}
 
